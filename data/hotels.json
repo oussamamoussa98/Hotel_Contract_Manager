@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Iberostar Averroes Hammamet",
+    "region": "HAMMAMET",
+    "chain": "IBEROSTAR",
+    "createdAt": "2026-01-10T09:00:00Z",
+    "updatedAt": "2026-09-29T08:28:48.153Z"
+  },
+  {
+    "id": 2,
+    "name": "Marhaba Beach Resort Sousse",
+    "region": "SOUSSE",
+    "chain": "MARHABA",
+    "createdAt": "2026-01-12T10:30:00Z",
+    "updatedAt": "2026-09-29T14:10:54.392Z"
+  },
+  {
+    "id": 3,
+    "name": "Hasdrubal Thalassa & Spa Djerba",
+    "region": "DJERBA",
+    "chain": "HASDRUBAL",
+    "createdAt": "2026-01-15T14:15:00Z",
+    "updatedAt": "2026-01-15T14:15:00Z"
+  },
+  {
+    "id": 4,
+    "name": "El Mouradi Palm Marina",
+    "region": "SOUSSE",
+    "chain": "EL_MOURADI",
+    "createdAt": "2026-01-18T11:00:00Z",
+    "updatedAt": "2026-01-18T11:00:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Vincci Marillia",
+    "region": "HAMMAMET",
+    "chain": "VINCCI",
+    "createdAt": "2026-01-20T16:45:00Z",
+    "updatedAt": "2026-01-20T16:45:00Z"
+  },
+  {
+    "id": 6,
+    "name": "Test Hotel Persistence",
+    "region": "SOUSSE",
+    "chain": "INDEPENDANT",
+    "createdAt": "2026-09-29T08:28:38.116Z",
+    "updatedAt": "2026-09-29T08:28:38.120Z"
+  },
+  {
+    "id": 7,
+    "name": "Audit Test Hotel Sousse",
+    "region": "HAMMAMET",
+    "chain": "INDEPENDANT",
+    "createdAt": "2026-09-29T20:17:58.927Z",
+    "updatedAt": "2026-09-29T20:17:58.928Z"
+  },
+  {
+    "id": 8,
+    "name": "Audit Test Hotel Hammamet",
+    "region": "HAMMAMET",
+    "chain": "INDEPENDANT",
+    "createdAt": "2026-09-29T20:18:45.485Z",
+    "updatedAt": "2026-09-29T20:18:45.485Z"
+  },
+  {
+    "id": 9,
+    "name": "Audit Sousse Resort & Thalasso",
+    "region": "HAMMAMET",
+    "chain": "INDEPENDANT",
+    "createdAt": "2026-09-29T20:18:52.787Z",
+    "updatedAt": "2026-09-29T20:18:52.794Z"
+  },
+  {
+    "id": 10,
+    "name": "Audit Sousse Resort",
+    "region": "HAMMAMET",
+    "chain": "INDEPENDANT",
+    "createdAt": "2026-09-29T20:19:53.210Z",
+    "updatedAt": "2026-09-29T20:19:53.213Z"
+  }
+]

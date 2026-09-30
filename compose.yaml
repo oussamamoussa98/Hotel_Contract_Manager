@@ -1,0 +1,31 @@
+# ==============================================================================
+# HOTEL CONTRACT MANAGER - DOCKER COMPOSE CONFIGURATION
+# Production-like deployment configuration with persistent volume mounts
+# ==============================================================================
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hotel-contract-manager
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - JWT_SECRET=${JWT_SECRET:?JWT_SECRET environment variable is mandatory}
+      - JWT_EXPIRES_IN=${JWT_EXPIRES_IN:-8h}
+      - APP_URL=${APP_URL:-http://localhost:3000}
+      - TRUST_PROXY=${TRUST_PROXY:-1}
+    volumes:
+      # Host bind mount for agency database files (users.json, hotels.json, contracts.json)
+      - ./data:/app/data
+      # Host bind mount for uploaded contract documents (PDF, Word, Excel)
+      - ./uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "node", "-e", "const http = require('http'); const req = http.request('http://localhost:3000/api/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1)); req.on('error', () => process.exit(1)); req.end();"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s

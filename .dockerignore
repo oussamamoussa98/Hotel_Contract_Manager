@@ -1,0 +1,25 @@
+# Exclude dependencies and build output
+node_modules
+dist
+build
+coverage
+
+# Exclude local environment files containing secrets
+.env
+.env.*
+!.env.example
+
+# Exclude git repository metadata
+.git
+.gitignore
+
+# Exclude logs and temporary files
+*.log
+*.tmp
+*.bak
+data/*.bak
+uploads/*
+
+# OS metadata
+.DS_Store
+Thumbs.db

@@ -1,0 +1,27 @@
+# ==============================================================================
+# HOTEL CONTRACT MANAGER - CADDY REVERSE PROXY CONFIGURATION TEMPLATE
+# ==============================================================================
+# INSTRUCTIONS:
+# 1. Replace 'contracts.youragency.tn' with your agency's actual registered domain or subdomain.
+# 2. Ensure your DNS A/AAAA record points to your VPS public IP address.
+# 3. Copy or link this configuration to /etc/caddy/Caddyfile on your VPS:
+#      sudo cp deployment/Caddyfile /etc/caddy/Caddyfile
+#      sudo systemctl reload caddy
+# 4. Caddy will automatically provision and renew TLS certificates from Let's Encrypt / ZeroSSL.
+# ==============================================================================
+
+contracts.youragency.tn {
+    # Reverse proxy all traffic to the container listening on localhost port 3000
+    reverse_proxy 127.0.0.1:3000
+
+    # Enable modern compression (Gzip and Zstandard)
+    encode gzip zstd
+
+    # Optional: Log access in structured JSON format
+    log {
+        output file /var/log/caddy/contracts_access.log {
+            roll_size 10MB
+            roll_keep 10
+        }
+    }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "email": "admin@hotelcontracts.com",
+    "name": "Administrateur",
+    "role": "ADMIN",
+    "passwordHash": "$2b$10$6ekJmDTBN3zIhhHyEayBxeNECE/UpW66sE0PGD4r.8INIJmZsA3ES",
+    "active": true,
+    "createdAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-09-29T20:19:01.363Z"
+  },
+  {
+    "id": 2,
+    "email": "admin@hotelcontracts.local",
+    "name": "Administrateur",
+    "role": "ADMIN",
+    "passwordHash": "$2b$10$enIdf01bzIE8usZaHvd1FemqzT8NgJJuhJGTfh5s19V1zwVdxkvMm",
+    "active": true,
+    "createdAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-09-28T10:33:45.529Z"
+  },
+  {
+    "id": 3,
+    "email": "agent@hotelcontracts.com",
+    "name": "Agent de Saisie",
+    "role": "AGENT_SAISIE",
+    "passwordHash": "$2b$10$8jlp4ab7lTtHi2cONME22ucamw2p8XQoeE7M4Qp8PqpS5/oM.9oqy",
+    "active": true,
+    "createdAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": 4,
+    "email": "agent@hotelcontracts.local",
+    "name": "Agent de Saisie",
+    "role": "AGENT_SAISIE",
+    "passwordHash": "$2b$10$PWuMeJzDmleV0ZdYPthFNuE4Tf.S8muGA.XeY3G1.gotA7.sZ6sam",
+    "active": true,
+    "createdAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-01-01T00:00:00Z"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "name": "Hotel Contract Manager",
+  "description": "Système de gestion et de suivi des contrats hôteliers pour agence de voyages avec gestion sécurisée des pièces jointes (PDF, Word, Excel, Images).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

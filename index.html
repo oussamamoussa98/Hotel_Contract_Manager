@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Contract Manager</title>
+    <meta name="description" content="Système de gestion et de suivi des contrats hôteliers pour agence de voyages avec gestion sécurisée des pièces jointes (PDF, Word, Excel, Images)." />
+    <meta property="og:title" content="Hotel Contract Manager" />
+    <meta property="og:description" content="Système de gestion et de suivi des contrats hôteliers pour agence de voyages avec gestion sécurisée des pièces jointes (PDF, Word, Excel, Images)." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Safeguard for environments (e.g. sandboxed iframes) where window.fetch has only a getter.
+      // Defines both getter and setter so that any script attempting `window.fetch = ...` succeeds.
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          if (typeof originalFetch === 'function') {
+            var currentFetch = originalFetch;
+            try {
+              Object.defineProperty(window, 'fetch', {
+                get: function() {
+                  return currentFetch;
+                },
+                set: function(fn) {
+                  currentFetch = fn;
+                },
+                configurable: true,
+                enumerable: true
+              });
+            } catch (e1) {
+              try {
+                Object.defineProperty(window, 'fetch', {
+                  value: originalFetch,
+                  writable: true,
+                  configurable: true,
+                  enumerable: true
+                });
+              } catch (e2) {}
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
