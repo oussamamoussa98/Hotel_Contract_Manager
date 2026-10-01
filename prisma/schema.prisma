@@ -1,0 +1,82 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  AGENT_SAISIE
+}
+
+enum EntryStatus {
+  SAISI
+  XML
+  NON_SAISI
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  name         String
+  role         Role     @default(AGENT_SAISIE)
+  passwordHash String
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Hotel {
+  id        Int        @id @default(autoincrement())
+  name      String
+  region    String
+  chain     String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  contracts Contract[]
+
+  @@map("hotels")
+}
+
+model Contract {
+  id               Int         @id @default(autoincrement())
+  hotelId          Int
+  hotel            Hotel       @relation(fields: [hotelId], references: [id], onDelete: Cascade)
+  contractDate     String?
+  contractDateFrom String
+  contractDateTo   String
+  receptionDate    String
+  entryStatus      EntryStatus @default(NON_SAISI)
+  paymentTerms     String      @default("")
+  fileName         String?
+  filePath         String?
+  fileType         String?
+  fileSize         Int?
+  storageType      String      @default("LOCAL") // "GCS" or "LOCAL"
+  gcsBucket        String?
+  gcsKey           String?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  @@index([hotelId])
+  @@index([entryStatus])
+  @@index([receptionDate])
+  @@map("contracts")
+}
+
+model ContractFile {
+  contractId Int      @id
+  fileName   String
+  fileType   String
+  fileSize   Int
+  fileData   Bytes
+  updatedAt  DateTime @default(now()) @updatedAt
+
+  @@map("contract_files")
+}
+

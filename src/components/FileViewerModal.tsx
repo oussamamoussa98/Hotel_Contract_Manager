@@ -176,11 +176,44 @@ export const FileViewerModal: React.FC<FileViewerModalProps> = ({
               </button>
             </div>
           ) : isPdf && blobUrl ? (
-            <iframe
-              src={blobUrl}
-              title={`Document ${fileName}`}
+            <object
+              data={blobUrl}
+              type="application/pdf"
               className="w-full h-full rounded-xl border border-slate-200 bg-white shadow-xs"
-            />
+            >
+              <iframe
+                src={blobUrl}
+                title={`Document ${fileName}`}
+                className="w-full h-full rounded-xl border border-slate-200 bg-white shadow-xs"
+              >
+                <div className="flex flex-col items-center justify-center p-8 text-center bg-white rounded-xl h-full">
+                  <FileText className="w-12 h-12 text-blue-600 mb-3" />
+                  <p className="text-sm font-semibold text-slate-800 mb-1">
+                    Visualisation intégrée non disponible dans ce navigateur
+                  </p>
+                  <p className="text-xs text-slate-500 mb-4 max-w-sm">
+                    Vous pouvez ouvrir ce document directement en plein écran ou le télécharger sur votre poste.
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href={blobUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold"
+                    >
+                      Ouvrir en plein écran
+                    </a>
+                    <button
+                      type="button"
+                      onClick={handleDownload}
+                      className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold"
+                    >
+                      Télécharger
+                    </button>
+                  </div>
+                </div>
+              </iframe>
+            </object>
           ) : isImage && blobUrl ? (
             <div className="max-w-full max-h-full flex items-center justify-center p-2 bg-white rounded-xl shadow-xs border border-slate-200 overflow-auto">
               <img

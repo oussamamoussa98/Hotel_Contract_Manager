@@ -78,5 +78,13 @@
     "chain": "INDEPENDANT",
     "createdAt": "2026-09-29T20:19:53.210Z",
     "updatedAt": "2026-09-29T20:19:53.213Z"
+  },
+  {
+    "id": 11,
+    "name": "Automated Test Resort Hammamet",
+    "region": "HAMMAMET",
+    "chain": "INDEPENDANT",
+    "createdAt": "2026-09-30T13:51:19.495Z",
+    "updatedAt": "2026-09-30T13:51:19.495Z"
   }
 ]

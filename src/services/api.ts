@@ -854,7 +854,11 @@ export const apiService = {
       }
     }
 
-    const blob = await res.blob();
+    const rawBlob = await res.blob();
+    const isPdf = filename.toLowerCase().endsWith('.pdf') || (rawBlob.type && rawBlob.type.includes('pdf'));
+    const blob = isPdf && rawBlob.type !== 'application/pdf'
+      ? new Blob([rawBlob], { type: 'application/pdf' })
+      : rawBlob;
     return { blob, filename };
   },
 
